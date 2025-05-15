@@ -16,11 +16,12 @@ const accessToken = process.env.REDDIT_ACCESS_TOKEN
 
 
 app.get("/subscriptions" , async (req,res)=>{
-    axios.get("https://oauth.reddit.com/subreddits/mine/subscriber", {
+    const response = await axios.get("https://oauth.reddit.com/subreddits/mine/subscriber", {
         headers:{
             Authorization: `Bearer ${accessToken}`
         }
     })
+    res.json(response.data)
 })
 
 
