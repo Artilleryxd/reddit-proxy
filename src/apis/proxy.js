@@ -14,7 +14,6 @@ const __dirname = path.dirname(__filename)
 dotenv.config({ path: path.resolve(__dirname, '../../.env') });
 const accessToken = process.env.REDDIT_ACCESS_TOKEN
 
-
 app.get("/subscriptions" , async (req,res)=>{
     try{
         const response = await axios.get("https://oauth.reddit.com/subreddits/mine/subscriber", {
