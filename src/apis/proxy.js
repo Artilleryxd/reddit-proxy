@@ -16,14 +16,15 @@ const accessToken = process.env.REDDIT_ACCESS_TOKEN
 
 app.get("/subscriptions" , async (req,res)=>{
     try{
-        const response = await axios.get("https://oauth.reddit.com/subreddits/mine/subscriber", {
+        const response = await axios.get("https://oauth.reddit.com/subreddits/mine/subscriber.json", {
         headers:{
             Authorization: `Bearer ${accessToken}`
         }
     })
     res.json(response.data.data.children)
     }catch(e){
-        res.status(401).json("Error Loading Data")
+        res.status(401).json("Error Loading Data" , e)
+        console.log("error fetching data")
     }    
 })
 

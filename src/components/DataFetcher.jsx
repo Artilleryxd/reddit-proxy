@@ -12,7 +12,6 @@ export default function DataFetcher() {
             const response = await axios.get("http://localhost:3000/subscriptions")
             setSubreddits(response.data)
           }catch(e){
-            console.log("object")
             setError("Error Fetching Data" + e)
           }
         }
