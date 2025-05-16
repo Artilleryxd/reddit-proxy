@@ -1,5 +1,6 @@
 import React , {useEffect, useState} from 'react'
 import axios from 'axios'
+import Card from './Card';
 
 export default function DataFetcher() {
 
@@ -27,9 +28,9 @@ export default function DataFetcher() {
         <h1>Error Fetching Data</h1>  
       </div>}
       {subreddits && 
-      <div>
+      <div className='flex justify-center items-center h-screen w-screen flex-wrap p-4'>
         {subreddits.map((subreddit, index)=>{
-          return(<h1 key={index}>{subreddit.data.display_name}</h1>)
+          return(<Card title={subreddit.data.display_name} description={subreddit.data.public_description} key={index}/>)
         })}  
       </div>}
     </div>
