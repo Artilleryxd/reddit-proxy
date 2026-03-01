@@ -8,4 +8,4 @@ export default function Card({title, description}) {
         <button className='mt-auto text-sm text-white bg-black hover:bg-gray-800 px-4 py-2 rounded-lg transition-colors'>Open</button>
     </div>
   )
-}
+} 
